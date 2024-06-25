@@ -2,7 +2,7 @@ import Icon from "../../components/ui/Icon.tsx";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 
 export interface Props {
-  navItems: SiteNavigationElement[];
+  items: SiteNavigationElement[];
 }
 
 function MenuItem({ item }: { item: SiteNavigationElement }) {
@@ -26,14 +26,11 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
   );
 }
 
-function Menu({ navItems }: Props) {
+function Menu({ items }: Props) {
   return (
-    <div
-      class="flex flex-col h-full overflow-y-auto"
-      style={{ minWidth: "100vw" }}
-    >
-      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200 overflow-y-auto">
-        {navItems.map((item) => (
+    <div class="flex flex-col h-full">
+      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200">
+        {items.map((item) => (
           <li>
             <MenuItem item={item} />
           </li>
@@ -46,7 +43,7 @@ function Menu({ navItems }: Props) {
             class="flex items-center gap-4 px-4 py-2"
             href="/wishlist"
           >
-            <Icon id="favorite" />
+            <Icon id="Heart" size={24} strokeWidth={2} />
             <span class="text-sm">Lista de desejos</span>
           </a>
         </li>
@@ -55,7 +52,7 @@ function Menu({ navItems }: Props) {
             class="flex items-center gap-4 px-4 py-2"
             href="https://www.deco.cx"
           >
-            <Icon id="home_pin" />
+            <Icon id="MapPin" size={24} strokeWidth={2} />
             <span class="text-sm">Nossas lojas</span>
           </a>
         </li>
@@ -64,7 +61,7 @@ function Menu({ navItems }: Props) {
             class="flex items-center gap-4 px-4 py-2"
             href="https://www.deco.cx"
           >
-            <Icon id="call" />
+            <Icon id="Phone" size={24} strokeWidth={2} />
             <span class="text-sm">Fale conosco</span>
           </a>
         </li>
@@ -73,7 +70,7 @@ function Menu({ navItems }: Props) {
             class="flex items-center gap-4 px-4 py-2"
             href="https://www.deco.cx"
           >
-            <Icon id="account_circle" />
+            <Icon id="User" size={24} strokeWidth={2} />
             <span class="text-sm">Minha conta</span>
           </a>
         </li>

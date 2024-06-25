@@ -1,46 +1,43 @@
+import { useSignal } from "@preact/signals";
+import { invoke } from "../../runtime.ts";
 import type { Product } from "apps/commerce/types.ts";
-import { AppContext } from "../../apps/site.ts";
-import { useComponent } from "../../sections/Component.tsx";
+import type { JSX } from "preact";
 
 export interface Props {
   productID: Product["productID"];
 }
 
-export const action = async (props: Props, req: Request, ctx: AppContext) => {
-  const form = await req.formData();
+function Notify({ productID }: Props) {
+  const loading = useSignal(false);
 
-  const name = `${form.get("name") ?? ""}`;
-  const email = `${form.get("email") ?? ""}`;
+  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
 
-  // deno-lint-ignore no-explicit-any
-  await (ctx as any).invoke("vtex/actions/notifyme.ts", {
-    skuId: props.productID,
-    name,
-    email,
-  });
+    try {
+      loading.value = true;
 
-  return props;
-};
+      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)
+        ?.value;
+      const email =
+        (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
 
-export default function Notify({ productID }: Props) {
+      await invoke.vtex.actions.notifyme({ skuId: productID, name, email });
+    } finally {
+      loading.value = false;
+    }
+  };
+
   return (
-    <form
-      class="form-control justify-start gap-2"
-      hx-sync="this:replace"
-      hx-indicator="this"
-      hx-swap="none"
-      hx-post={useComponent<Props>(import.meta.url, { productID })}
-    >
+    <form class="form-control justify-start gap-2" onSubmit={handleSubmit}>
       <span class="text-base">Este produto está indisponivel no momento</span>
       <span class="text-sm">Avise-me quando estiver disponivel</span>
 
       <input placeholder="Nome" class="input input-bordered" name="name" />
       <input placeholder="Email" class="input input-bordered" name="email" />
 
-      <button class="btn btn-primary no-animation">
-        <span class="[.htmx-request_&]:hidden inline">Enviar</span>
-        <span class="[.htmx-request_&]:inline hidden loading loading-spinner loading-xs" />
-      </button>
+      <button class="btn disabled:loading" disabled={loading}>Enviar</button>
     </form>
   );
 }
+
+export default Notify;

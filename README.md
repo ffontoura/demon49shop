@@ -111,7 +111,7 @@ and set your credentials. Then, open `/components/minicart/Cart.tsx` and
 account name.
 
 After this, your should be using the products provenient from your ecommerce
-account.
+account
 
 ### Adding fonts
 
@@ -156,7 +156,7 @@ Open `static` folder and replace `favicon.ico`, `robots.txt` and
 
 If you are missing a functionality or the changes in the design system were not
 enough for accomplishing your project, you can fully customize all HTML/CSS/JS
-generated on your store by changing the code..
+generated on your store by changing the code.
 
 ### Understanding project structure
 
@@ -222,3 +222,4 @@ Check performance best practices on [deco.cx's docs](https://www.deco.cx/docs).
 <a href="https://github.com/deco-sites/fashion/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=deco-sites/fashion" alt="Storefront Contributors" />
 </a>
+

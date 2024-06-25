@@ -1,0 +1,8 @@
+{
+  "__resolveType": "n49shop/loaders/productList.ts",
+  "props": {
+    "hash": "3454545444"
+  },
+  "sort": "created-at-descending",
+  "limit": 10
+}

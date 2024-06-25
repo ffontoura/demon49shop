@@ -1,1 +1,11 @@
-{"__resolveType":"site/sections/Category/CategoryGrid.tsx"}
+{
+  "__resolveType": "site/sections/Category/CategoryGrid.tsx",
+  "list": [],
+  "layout": {
+    "headerAlignment": "center",
+    "categoryCard": {
+      "textPosition": "top",
+      "textAlignment": "center"
+    }
+  }
+}

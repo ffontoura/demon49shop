@@ -2,41 +2,44 @@
   "seo": {
     "type": "website",
     "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/a5d890ba-e5b8-471e-8b77-7412c1d4fa56",
-    "title": "Storefront",
+    "title": "Loja Demo N49Shop",
     "jsonLDs": [],
     "noIndexing": false,
     "description": "Improve your page performance with deco.cx ",
-    "titleTemplate": "%s | deco.cx",
-    "descriptionTemplate": "%s | Deco.cx"
+    "titleTemplate": "%s | Loja Demo N49Shop",
+    "descriptionTemplate": "%s | Loja Demo N49Shop"
   },
   "theme": {
-    "__resolveType": "Deco"
+    "__resolveType": "Fashion theme"
   },
   "global": [
     {
-      "__resolveType": "htmx/sections/htmx.tsx"
+      "__resolveType": "website/sections/Analytics/Analytics.tsx",
+      "dangerouslyRunOnMainThread": true
     },
     {
-      "__resolveType": "website/sections/Analytics/Analytics.tsx",
-      "dangerouslyRunOnMainThread": true,
-      "trackingIds": []
+      "__resolveType": "algolia/sections/Analytics/Algolia.tsx"
     },
     {
       "__resolveType": "analytics/sections/Analytics/DecoAnalytics.tsx"
     },
     {
-      "__resolveType": "site/sections/Session.tsx",
-      "minicart": null,
-      "wishlist": null,
-      "mode": "lazy",
-      "user": null
+      "__resolveType": "htmx/sections/htmx.tsx"
     }
   ],
   "routes": [
     {
-      "__resolveType": "shopify/loaders/proxy.ts",
-      "extraPathsToProxy": [],
+      "__resolveType": "n49shop/loaders/proxy.ts",
       "includeSiteMap": [],
+      "extraPathsToProxy": [],
+      "includeScriptsToHead": {
+        "includes": [
+          {
+            "__resolveType": "analytics/loaders/DecoAnalyticsScript.ts"
+          }
+        ],
+        "includePlausible": true
+      },
       "excludePathsFromDecoSiteMap": []
     },
     {
@@ -52,7 +55,7 @@
   "commerce": {
     "platform": "other"
   },
-  "platform": "shopify",
+  "platform": "custom",
   "__resolveType": "site/apps/site.ts",
   "firstByteThresholdMS": true,
   "abTesting": {
@@ -62,6 +65,6 @@
     }
   },
   "flavor": {
-    "framework": "htmx"
+    "framework": "fresh"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "Product Page",
-  "path": "/products/:slug",
+  "path": "/:slug/p",
   "default": {
     "possiblePaths": []
   },
@@ -15,37 +15,68 @@
       "__resolveType": "commerce/sections/Seo/SeoPDP.tsx"
     },
     {
-      "__resolveType": "Header"
+      "__resolveType": "site/sections/Header/Header.tsx",
+      "cart": {
+        "freeShippingObjectiveQuantity": 600
+      },
+      "logo": {
+        "alt": "Glamour logo by deco",
+        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10807/b7c8737a-8d2f-4907-a343-027bbbb7f739",
+        "width": 100,
+        "height": 50
+      },
+      "alerts": [
+        "Use this template to create your store at deco.cx"
+      ],
+      "navItems": {
+        "__resolveType": "navbar"
+      },
+      "products": [],
+      "searchbar": {
+        "name": "q",
+        "action": "/s",
+        "loader": {
+          "data": {
+            "count": 4,
+            "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts"
+          },
+          "__resolveType": "resolved"
+        },
+        "placeholder": "What are you looking for?"
+      },
+      "suggestions": {
+        "products": [],
+        "searches": []
+      },
+      "logoPosition": "center"
     },
     {
       "page": {
-        "__resolveType": "PDP Loader"
+        "__resolveType": "commerce/loaders/product/extensions/detailsPage.ts",
+        "data": {
+          "__resolveType": "n49shop/loaders/productDetailsPage.ts",
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          }
+        },
+        "extensions": [
+          {
+            "__resolveType": "vtex/loaders/product/extensions/detailsPage.ts"
+          }
+        ]
       },
       "__resolveType": "site/sections/Product/ProductDetails.tsx"
     },
     {
       "title": "You may also like",
-      "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "products": {
-        "__resolveType": "shopify/loaders/ProductList.ts",
-        "props": {
-          "sort": "",
-          "query": "a",
-          "count": 9
-        },
-        "filters": {
-          "tags": [],
-          "productTypes": [],
-          "productVendors": [],
-          "variantOptions": []
-        }
-      }
+        "__resolveType": "Preview n49shop/loaders/productList.ts"
+      },
+      "__resolveType": "site/sections/Product/ProductShelf.tsx"
     },
     {
-      "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
-    },
-    {
-      "__resolveType": "Footer"
+      "__resolveType": "Footer - 01"
     }
   ],
   "__resolveType": "website/pages/Page.tsx"

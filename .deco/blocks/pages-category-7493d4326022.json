@@ -1,6 +1,6 @@
 {
   "name": "Category",
-  "path": "/s",
+  "path": "/*",
   "default": {
     "possiblePaths": []
   },
@@ -12,12 +12,11 @@
       "__resolveType": "commerce/sections/Seo/SeoPLP.tsx"
     },
     {
-      "__resolveType": "Header"
+      "__resolveType": "Header - 01"
     },
     {
-      "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
-        "__resolveType": "PLP Loader"
+        "limit": 20
       },
       "layout": {
         "columns": {
@@ -25,15 +24,17 @@
           "desktop": 4
         },
         "variant": "aside",
-        "pagination": "show-more"
+        "pagination": "show-more",
+        "format": "Pagination"
       },
-      "startingPage": 1
+      "cardLayout": {
+        "__resolveType": "Product Card Layout - 01"
+      },
+      "startingPage": 1,
+      "__resolveType": "site/sections/Product/SearchResult.tsx"
     },
     {
-      "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
-    },
-    {
-      "__resolveType": "Footer"
+      "__resolveType": "Footer - 01"
     }
   ],
   "__resolveType": "website/pages/Page.tsx"

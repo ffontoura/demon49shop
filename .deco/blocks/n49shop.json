@@ -1,0 +1,11 @@
+{
+  "__resolveType": "decohub/apps/n49shop.ts",
+  "baseUrl": "https://spazziojeans.api.n49shop.com.br/api/rest",
+  "accessToken": {
+    "__resolveType": "website/loaders/secret.ts"
+  },
+  "platform": "custom",
+  "publicUrl": "https://demo.api.n49.com.br",
+  "storeId": "0",
+  "apiKey": "59CHjDw7YQm4kpfC7G1FAxl3t1m6BUs3J40gErkU"
+}

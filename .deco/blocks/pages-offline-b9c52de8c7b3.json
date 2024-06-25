@@ -3,16 +3,26 @@
   "path": "/offline",
   "sections": [
     {
-      "__resolveType": "Header"
+      "__resolveType": "Header - 01"
     },
     {
       "title": "Oh no! You are offline!",
-      "products": null,
+      "products": {
+        "props": {
+          "hash": "3454545444"
+        },
+        "__resolveType": "n49shop/loaders/productList.ts",
+        "sort": "created-at-descending",
+        "limit": 10
+      },
+      "cardLayout": {
+        "__resolveType": "Product Card Layout - 01"
+      },
       "description": "Maybe take some time to explore",
       "__resolveType": "site/sections/Product/ProductShelf.tsx"
     },
     {
-      "__resolveType": "Footer"
+      "__resolveType": "Footer - 01"
     }
   ],
   "__resolveType": "website/pages/Page.tsx"

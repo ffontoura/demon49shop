@@ -1,0 +1,40 @@
+{
+  "name": "Search",
+  "path": "/s",
+  "sections": [
+    {
+      "type": "website",
+      "__resolveType": "website/sections/Seo/Seo.tsx",
+      "titleTemplate": "%s | Deco.cx",
+      "descriptionTemplate": "%s | Deco.cx"
+    },
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "page": {
+        "__resolveType": "commerce/loaders/product/extensions/listingPage.ts",
+        "data": {
+          "__resolveType": "Preview n49shop/loaders/productListingPage.ts"
+        },
+        "extensions": [
+          {
+            "__resolveType": "vtex/loaders/product/extensions/listingPage.ts"
+          }
+        ]
+      },
+      "layout": {
+        "columns": {
+          "mobile": 2,
+          "desktop": 4
+        },
+        "variant": "aside"
+      },
+      "__resolveType": "site/sections/Product/SearchResult.tsx"
+    },
+    {
+      "__resolveType": "Footer - 01"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}
