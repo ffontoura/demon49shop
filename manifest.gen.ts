@@ -2,9 +2,12 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $$$$$$$$$$$0 from "./apps/deco/resend.ts";
-import * as $$$$$$$$$$$1 from "./apps/decohub.ts";
-import * as $$$$$$$$$$$2 from "./apps/site.ts";
+import * as $$$$$$$$$$$0 from "./apps/deco/analytics.ts";
+import * as $$$$$$$$$$$1 from "./apps/deco/brand-assistant.ts";
+import * as $$$$$$$$$$$2 from "./apps/deco/htmx.ts";
+import * as $$$$$$$$$$$3 from "./apps/deco/workflows.ts";
+import * as $$$$$$$$$$$4 from "./apps/decohub.ts";
+import * as $$$$$$$$$$$5 from "./apps/site.ts";
 import * as $$$2 from "./loaders/availableIcons.ts";
 import * as $$$3 from "./loaders/icons.ts";
 import * as $$$0 from "./loaders/Layouts/ProductCard.tsx";
@@ -120,9 +123,12 @@ const manifest = {
     "site/sections/Theme/Theme.tsx": $$$$$$48,
   },
   "apps": {
-    "site/apps/deco/resend.ts": $$$$$$$$$$$0,
-    "site/apps/decohub.ts": $$$$$$$$$$$1,
-    "site/apps/site.ts": $$$$$$$$$$$2,
+    "site/apps/deco/analytics.ts": $$$$$$$$$$$0,
+    "site/apps/deco/brand-assistant.ts": $$$$$$$$$$$1,
+    "site/apps/deco/htmx.ts": $$$$$$$$$$$2,
+    "site/apps/deco/workflows.ts": $$$$$$$$$$$3,
+    "site/apps/decohub.ts": $$$$$$$$$$$4,
+    "site/apps/site.ts": $$$$$$$$$$$5,
   },
   "name": "site",
   "baseUrl": import.meta.url,
